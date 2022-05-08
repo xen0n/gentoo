@@ -1,0 +1,21 @@
+https://pagure.io/libaio/c/d892696468cb99d7d98b23b78bde942df0992d5a?branch=master
+From: yehui ren <renyehui@uniontech.com>
+Date: Jul 20 2021 18:15:43 +0000
+Subject: Use generic syscall number schema for loongarch
+
+
+Signed-off-by: yehui ren <renyehui@uniontech.com>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
+
+--- a/src/syscall.h
++++ b/src/syscall.h
+@@ -27,7 +27,7 @@
+ #include "syscall-arm.h"
+ #elif defined(__sparc__)
+ #include "syscall-sparc.h"
+-#elif defined(__aarch64__) || defined(__riscv)
++#elif defined(__aarch64__) || defined(__loongarch__) || defined(__riscv)
+ #include "syscall-generic.h"
+ #else
+ #warning "using system call numbers from sys/syscall.h"
+

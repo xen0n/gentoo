@@ -23,6 +23,8 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-0.3.112-cppflags.patch
 	"${FILESDIR}"/${PN}-0.3.111-optional-werror.patch
 	"${FILESDIR}"/${PN}-0.3.112-respect-LDFLAGS.patch
+	"${FILESDIR}"/${PN}-0.3.112-loong-tests.patch
+	"${FILESDIR}"/${PN}-0.3.112-loong-syscall-numbers.patch
 )
 
 src_prepare() {

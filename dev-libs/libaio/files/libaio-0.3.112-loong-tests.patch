@@ -1,0 +1,25 @@
+https://pagure.io/libaio/c/48f4fb7d688e26b05c76e3d0fabdefc6c5f66241?branch=master
+rebased on top of 0.3.112
+
+From: yehui ren <renyehui@uniontech.com>
+Date: Jul 20 2021 18:14:49 +0000
+Subject: cases/16.t: loongarch only supports eventfd2
+
+
+Signed-off-by: yehui ren <renyehui@uniontech.com>
+Signed-off-by: Jeff Moyer <jmoyer@redhat.com>
+
+--- a/harness/cases/16.t
++++ b/harness/cases/16.t
+@@ -18,8 +18,8 @@
+ #define SYS_eventfd 318
+ #elif defined(__alpha__)
+ #define SYS_eventfd 478
+-#elif defined(__aarch64__)
+-/* arm64 does not implement eventfd, only eventfd2 */
++#elif defined(__aarch64__) || defined(__loongarch__) || defined(__riscv)
++/* these recent architectures do not implement eventfd, only eventfd2 */
+ #define USE_EVENTFD2
+ #ifndef SYS_eventfd2
+ #define SYS_eventfd2 19
+
