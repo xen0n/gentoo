@@ -65,6 +65,7 @@ RDEPEND="
 PATCHES=(
 	"${FILESDIR}/${PN}-202411-werror.patch"
 	"${FILESDIR}/${PN}-202411-loong.patch"
+	"${FILESDIR}/${PN}-202411-loong-2.patch"
 	"${FILESDIR}/${PN}-202408-binutils-2.41-textrels.patch"
 )
 
